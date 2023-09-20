@@ -1,0 +1,62 @@
+body {
+    width: 100%;
+    
+}
+
+#game-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#game-screen {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+#main-screen {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    width: 95%;
+    align-items: center;
+    justify-content: center;
+}
+
+#logo-screen {
+    width: 20%;
+}
+
+#pikachu {
+    width: 10%;
+}
+
+#mapa {
+    width: 60%;
+    height: auto;
+    background-image: url(/images/arenanormal.webp);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 80vh;
+    overflow: auto;
+
+}
+
+#third {
+    width: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: space-between;
+}
+
+#status {
+    border: solid 2px;
+}
+
+#ash {
+    width: 100%;
+}

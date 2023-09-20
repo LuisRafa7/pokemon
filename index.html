@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon Game</title>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+    <main>
+        <div id="game-intro">
+            <img src="/images/logo.png" alt="Logo">
+            <h1>The Game</h1>
+            <button id="start-button">Start Game</button>
+            <div>
+                <h2>Rules</h2>
+                Usa as setas para apanhar os Pókemon, evita o Team Rocket
+            </div>
+        </div>
+
+        <div id="game-screen">
+            <img id="logo-screen" src="/images/logo.png" alt="Logo">
+            <div id="main-screen">
+                <img id="pikachu" src="/images/pika.png" alt="Pikachu">
+                <div id="mapa"></div>
+                <div id="third">
+                    <div id="stats">
+                        <h2>Stats</h2>
+                        <p>Score: <span id="score">0</span></p>
+                        <p>Lives: <span id="lives">3</span></p>
+                    </div>
+                    <img id="ash" src="/images/ash.webp" alt="Ash">
+                </div>
+                
+            </div>
+        </div>
+    </main>
+    
+    <script type="text/javascript" src="js/pokemon.js"></script>
+    <script type="text/javascript" src="/js/player.js"></script>
+    <script type="text/javascript" src="/js/game.js"></script>
+    <script type="text/javascript" src="/js/script.js"></script>
+</body>
+</html>
