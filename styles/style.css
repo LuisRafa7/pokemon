@@ -1,7 +1,14 @@
+@import url('https://fonts.cdnfonts.com/css/pokemon-solid');
+@import url('https://fonts.cdnfonts.com/css/pokemon-hollow');
+
 body {
     width: 100%;
+    background-image: url(../images/peakpx.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
     
 }
+
 
 #game-intro {
     display: flex;
@@ -29,14 +36,25 @@ body {
     width: 20%;
 }
 
-#pikachu {
+#first {
     width: 10%;
+}
+
+#chrono {
+    background-color: #f1c304;
+    border: solid 10px #2e67b0;
+    width: 80%;
+    text-align: center;
+}
+
+#pikachu {
+    width: 100%;
 }
 
 #mapa {
     width: 60%;
     height: auto;
-    background-image: url(/images/arenanormal.webp);
+    background-image: url(../images/arenanormal.webp);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -53,10 +71,134 @@ body {
     align-content: space-between;
 }
 
-#status {
-    border: solid 2px;
+#stats {
+    background-color: #f1c304;
+    border: solid 10px #2e67b0;
+    width: 80%;
+    text-align: center;
 }
 
 #ash {
     width: 100%;
 }
+
+#game-end {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+#ov {
+    font-family: 'Pokemon Hollow', sans-serif;
+    color:#f1c304;
+    font-size: 500%;
+    text-shadow: -10px 0 #2e67b0, 0 10px #2e67b0, 10px 0 #2e67b0, 0 -10px #2e67b0;
+    padding: 0;
+    margin: 0;
+}
+
+
+#abc {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: #b6dfe9;
+    border: solid 20px white;
+    border-radius: 5%;
+}
+
+#arrPrint{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+}
+
+#arrPrint img {
+   width: 8%;
+}
+
+#popup {
+    display: none;
+    position: fixed;
+    padding: 10px;
+    width: 280px;
+    left: 50%;
+    margin-left: -150px;
+    height: 180px;
+    top: 50%;
+    margin-top: -100px;
+    background: #FFF;
+    border: 3px solid #F04A49;
+    z-index: 20;
+  }
+
+  .popup {
+    display: block;
+    position: fixed;
+    padding: 10px;
+    width: 280px;
+    left: 50%;
+    margin-left: -150px;
+    height: 450px;
+    top: 40%;
+    margin-top: -100px;
+    background: #FFF;
+    border: 3px solid #F04A49;
+    z-index: 20;
+  }
+
+  .popupimg {
+    display: block;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .titles {
+    background-color:  green;
+    border: 2px solid black;
+    color: white;
+    border-radius: 40%;
+    padding: 2px 10px 2px 10px;
+    text-align: center;
+  }
+
+  .titles1 {
+    background-color: greenyellow;
+    border: 2px solid black;
+    color: white;
+    border-radius: 40%;
+    padding: 8px 10px 8px 10px;
+    text-align: center;
+  }
+
+  .cima {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .lado {
+    display: flex;
+    flex-direction: row;
+  }
+
+  #oitenta {
+    width: 90%;
+  }
+
+  #ladofirst {
+    flex-basis: 50%;
+  }
+
+  #ladosecond {
+    flex-basis: 50%;
+  }
+
+  #test {
+    display: none;
+    width: 500px;
+  }

@@ -9,7 +9,7 @@
 <body>
     <main>
         <div id="game-intro">
-            <img src="/images/logo.png" alt="Logo">
+            <img src="./images/logo.png" alt="Logo">
             <h1>The Game</h1>
             <button id="start-button">Start Game</button>
             <div>
@@ -19,26 +19,42 @@
         </div>
 
         <div id="game-screen">
-            <img id="logo-screen" src="/images/logo.png" alt="Logo">
+            <img id="logo-screen" src="./images/logo.png" alt="Logo">
             <div id="main-screen">
-                <img id="pikachu" src="/images/pika.png" alt="Pikachu">
+                <div id="first">
+                    <img id="pikachu" src="./images/pika.png" alt="Pikachu">
+                    <h2 id="chrono"><span id="minUni">0</span><span id="minDec">0</span>:<span id="secUni">0</span><span id="secDec">0</span></h2>
+                </div>
                 <div id="mapa"></div>
                 <div id="third">
+                    <img id="ash" src="./images/ash.webp" alt="Ash">
                     <div id="stats">
                         <h2>Stats</h2>
                         <p>Score: <span id="score">0</span></p>
                         <p>Lives: <span id="lives">3</span></p>
                     </div>
-                    <img id="ash" src="/images/ash.webp" alt="Ash">
                 </div>
                 
             </div>
         </div>
+
+        <div id="game-end">
+            <h1 id="ov">Game Over</h1>
+            <h2>High Score: <span id="highScore"></span></h2>
+            <h2>Your Score: <span id="yourScore"></span></h2>
+            <button id="restart-button">Play Again</button>
+            <div id="abc">
+                <h1>Pokédex</h1>
+                <div id="arrPrint"></div>
+            </div>
+        </div>
     </main>
     
-    <script type="text/javascript" src="js/pokemon.js"></script>
-    <script type="text/javascript" src="/js/player.js"></script>
-    <script type="text/javascript" src="/js/game.js"></script>
-    <script type="text/javascript" src="/js/script.js"></script>
+    <script type="text/javascript" src="./js/rocket.js"></script>
+    <script type="text/javascript" src="./js/pokemon.js"></script>
+    <script type="text/javascript" src="./js/array.js"></script>
+    <script type="text/javascript" src="./js/player.js"></script>
+    <script type="text/javascript" src="./js/game.js"></script>
+    <script type="text/javascript" src="./js/script.js"></script>
 </body>
 </html>

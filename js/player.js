@@ -8,7 +8,7 @@ class Player {
         this.directionX = 0;
         this.directionY = 0;
         this.element = document.createElement("img");
-
+        
         this.element.src = imgSrc;
         this.element.style.position = "absolute";
         this.element.style.left = `${this.left}%`;
