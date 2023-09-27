@@ -54,10 +54,10 @@ class Player {
         const pokemonRect = pokemon.element.getBoundingClientRect();
 
         if(
-            playerRect.left < pokemonRect.right &&
-            playerRect.right > pokemonRect.left &&
-            playerRect.top < pokemonRect.bottom &&
-            playerRect.bottom > pokemonRect.top
+            playerRect.left  + (playerRect.left * 0.02) < pokemonRect.right &&
+            playerRect.right - (playerRect.left * 0.02)> pokemonRect.left &&
+            playerRect.top + (playerRect.top * 0.02) < pokemonRect.bottom &&
+            playerRect.bottom - (playerRect.top * 0.02) > pokemonRect.top
         ) {
             return true;
         }

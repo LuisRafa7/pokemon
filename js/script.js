@@ -1,6 +1,7 @@
 window.onload = function () {
     const startButton = document.querySelector("#start-button");
     const restartButton = document.querySelector("#restart-button");
+    const rulesButton1 = document.querySelector("#rules-button");
     const cPokeball = document.querySelector("#cPokeball");
     const cArena = document.querySelector("#cArena");
     let game;
@@ -33,6 +34,27 @@ window.onload = function () {
     window.location.reload();
     return false;
     });
+
+    rulesButton1.addEventListener('click', function(){
+      let rulespop = document.createElement("div");
+      rulespop.className = 'popuprules'
+      document.body.appendChild(rulespop);
+          rulespop.innerHTML = `<h1 class="titlepoke">Rules</h1>
+          <div class="rulesformat">
+          <p>Catch as many Pokémon as you can, each of which has a score corresponding to its HP.</p>
+          <p>Evita o Team Rocket para não perderes nenhuma vida.</p>
+          <p>Try to get as many scores as possible, you have 2 minutes</p>
+          </div>
+          <div id="separate">
+          <button class="buttonpopup" id="buttone">OK</button>
+          </div>`;
+
+          const buttone = document.querySelector("#buttone");
+            buttone.onclick = function(){
+            rulespop.parentElement.removeChild(rulespop);
+            };
+    })
+
 
     cPokeball.addEventListener('click', function(){
       let choosePoke = document.createElement("div");
@@ -136,13 +158,16 @@ window.onload = function () {
           </div>
           <div id="separate">
           <button class="buttonpopup" id="defaultarena">Default</button>
-          <img src=arena alt="">
+          <div class="miniarena"></div>
           <button class="buttonpopup" id="buttond">OK</button>
           </div>`;
+
+          const miniarena = document.querySelector(".miniarena");
 
           const bug = document.querySelector("#bug");
             bug.onclick = function() {
               arena = "url(./images/arenas/bug.webp)"
+              miniarena.style.backgroundImage = "url(./images/arenas/bug.webp)" 
               bug.style.border = "5px solid #f1c304";
               dark.style.border = "none";
               dragon.style.border = "none";
@@ -166,6 +191,7 @@ window.onload = function () {
             const dark = document.querySelector("#dark");
             dark.onclick = function() {
               arena = "url(./images/arenas/dark.webp)"
+              miniarena.style.backgroundImage = "url(./images/arenas/dark.webp)" 
               bug.style.border = "none";
               dark.style.border = "5px solid #f1c304";
               dragon.style.border = "none";
@@ -189,6 +215,7 @@ window.onload = function () {
             const dragon = document.querySelector("#dragon");
             dragon.onclick = function() {
               arena = "url(./images/arenas/dragon.webp)"
+              miniarena.style.backgroundImage = "url(./images/arenas/dragon.webp)"
               bug.style.border = "none";
               dark.style.border = "none";
               dragon.style.border = "5px solid #f1c304";
@@ -212,6 +239,7 @@ window.onload = function () {
             const electric = document.querySelector("#electric");
             electric.onclick = function() {
               arena = "url(./images/arenas/electric.webp)"
+              miniarena.style.backgroundImage = "url(./images/arenas/electric.webp)"
               bug.style.border = "none";
               dark.style.border = "none";
               dragon.style.border = "none";
@@ -235,6 +263,7 @@ window.onload = function () {
             const fairy = document.querySelector("#fairy");
             fairy.onclick = function() {
               arena = "url(./images/arenas/fairy.webp)"
+              miniarena.style.backgroundImage = "url(./images/arenas/fairy.webp)"
               bug.style.border = "none";
               dark.style.border = "none";
               dragon.style.border = "none";
@@ -258,6 +287,7 @@ window.onload = function () {
             const fighting = document.querySelector("#fighting");
             fighting.onclick = function() {
               arena = "url(./images/arenas/Fighting.webp)"
+              miniarena.style.backgroundImage = "url(./images/arenas/Fighting.webp)"
               bug.style.border = "none";
               dark.style.border = "none";
               dragon.style.border = "none";
@@ -281,6 +311,7 @@ window.onload = function () {
             const fire = document.querySelector("#fire");
             fire.onclick = function() {
               arena = "url(./images/arenas/fire.webp)"
+              miniarena.style.backgroundImage = "url(./images/arenas/fire.webp)"
               bug.style.border = "none";
               dark.style.border = "none";
               dragon.style.border = "none";
@@ -304,6 +335,7 @@ window.onload = function () {
             const flying = document.querySelector("#flying");
             flying.onclick = function() {
               arena = "url(./images/arenas/flying.webp)"
+              miniarena.style.backgroundImage = "url(./images/arenas/flying.webp)"
               bug.style.border = "none";
               dark.style.border = "none";
               dragon.style.border = "none";
@@ -327,6 +359,7 @@ window.onload = function () {
             const ghost = document.querySelector("#ghost");
             ghost.onclick = function() {
               arena = "url(./images/arenas/Ghost.webp)"
+              miniarena.style.backgroundImage = "url(./images/arenas/Ghost.webp)"
               bug.style.border = "none";
               dark.style.border = "none";
               dragon.style.border = "none";
@@ -350,6 +383,7 @@ window.onload = function () {
             const grass = document.querySelector("#grass");
             grass.onclick = function() {
               arena = "url(./images/arenas/grass.webp)"
+              miniarena.style.backgroundImage = "url(./images/arenas/grass.webp)"
               bug.style.border = "none";
               dark.style.border = "none";
               dragon.style.border = "none";
@@ -373,6 +407,7 @@ window.onload = function () {
             const ground = document.querySelector("#ground");
             ground.onclick = function() {
               arena = "url(./images/arenas/Ground.webp)"
+              miniarena.style.backgroundImage = "url(./images/arenas/Ground.webp)"
               bug.style.border = "none";
               dark.style.border = "none";
               dragon.style.border = "none";
@@ -396,6 +431,7 @@ window.onload = function () {
             const ice = document.querySelector("#ice");
             ice.onclick = function() {
               arena = "url(./images/arenas/Ice.webp)"
+              miniarena.style.backgroundImage = "url(./images/arenas/Ice.webp)"
               bug.style.border = "none";
               dark.style.border = "none";
               dragon.style.border = "none";
@@ -419,6 +455,7 @@ window.onload = function () {
             const normal = document.querySelector("#normal");
             normal.onclick = function() {
               arena = "url(./images/arenas/normal.webp)"
+              miniarena.style.backgroundImage = "url(./images/arenas/normal.webp)"
               bug.style.border = "none";
               dark.style.border = "none";
               dragon.style.border = "none";
@@ -442,6 +479,7 @@ window.onload = function () {
             const poison = document.querySelector("#poison");
             poison.onclick = function() {
               arena = "url(./images/arenas/Poison.webp)"
+              miniarena.style.backgroundImage = "url(./images/arenas/Poison.webp)"
               bug.style.border = "none";
               dark.style.border = "none";
               dragon.style.border = "none";
@@ -465,6 +503,7 @@ window.onload = function () {
             const psychic = document.querySelector("#psychic");
             psychic.onclick = function() {
               arena = "url(./images/arenas/psychic.webp)"
+              miniarena.style.backgroundImage = "url(./images/arenas/psychic.webp)"
               bug.style.border = "none";
               dark.style.border = "none";
               dragon.style.border = "none";
@@ -488,6 +527,7 @@ window.onload = function () {
             const rock = document.querySelector("#rock");
             rock.onclick = function() {
               arena = "url(./images/arenas/rock.webp)"
+              miniarena.style.backgroundImage = "url(./images/arenas/rock.webp)"
               bug.style.border = "none";
               dark.style.border = "none";
               dragon.style.border = "none";
@@ -511,6 +551,7 @@ window.onload = function () {
             const steel = document.querySelector("#steel");
             steel.onclick = function() {
               arena = "url(./images/arenas/steel.webp)"
+              miniarena.style.backgroundImage = "url(./images/arenas/steel.webp)"
               bug.style.border = "none";
               dark.style.border = "none";
               dragon.style.border = "none";
@@ -534,6 +575,7 @@ window.onload = function () {
             const water = document.querySelector("#water");
             water.onclick = function() {
               arena = "url(./images/arenas/water.webp)"
+              miniarena.style.backgroundImage = "url(./images/arenas/water.webp)"
               bug.style.border = "none";
               dark.style.border = "none";
               dragon.style.border = "none";
@@ -557,6 +599,7 @@ window.onload = function () {
             const defaultarena = document.querySelector("#defaultarena");
             defaultarena.onclick = function() {
               arena = "url(./images/arenas/normal.webp)"
+              miniarena.style.backgroundImage = "url(./images/arenas/normal.webp)"
               bug.style.border = "none";
               dark.style.border = "none";
               dragon.style.border = "none";

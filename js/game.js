@@ -9,6 +9,7 @@ class Game {
         this.catchUpdate = document.querySelector("#catch");
         this.highScore = document.querySelector("#highScore");
         this.yourScore = document.querySelector("#yourScore");
+        this.pokeCatch = document.querySelector("#pokeCatch");
         this.minUni = document.querySelector("#minUni");
         this.minDec = document.querySelector("#minDec");
         this.secUni = document.querySelector("#secUni");
@@ -36,6 +37,8 @@ class Game {
         this.chrono = 120;
         this.minutes = 0;
         this.seconds = 0;
+        this.audioPoke = new Audio("./audio/catch.mp3");
+        this.audioRocket = new Audio("./audio/touchRocket.mp3")
     }
     
     
@@ -94,6 +97,7 @@ class Game {
             this.pokemon.push(new Pokemon(this.mainScreen, arr[this.counter + 1].hp, arr[this.counter + 1].imgSrc));
             this.counter++;
             this.catch++;
+            this.audioPoke.play();
             this.scoreUpdate.innerText = this.score;
             this.catchUpdate.innerText = this.catch;
             console.log(images);
@@ -107,6 +111,7 @@ class Game {
             this.teamRocket = new Rocket(this.mainScreen);
             this.lives--;
             this.livesUpdate.innerText = this.lives;
+            this.audioRocket.play();
         }
         
         if (this.counter === (arr.length - 1)){
@@ -185,11 +190,13 @@ endGame() {
     if (this.score > oldHighScore) {
         localStorage.setItem("highScore", this.score);
         this.highScore.innerText = this.score;
-        this.yourScore.innerText = this.score
+        this.yourScore.innerText = this.score;
+        this.pokeCatch.innerText = this.catch;
     } 
     else {
         this.highScore.innerText = oldHighScore;
         this.yourScore.innerText = this.score
+        this.pokeCatch.innerText = this.catch;
     }
     
            
@@ -1157,4 +1164,137 @@ const arr = [
     type: "Water, Ice",
     height: "2.5m",
     weight: "220kg"},
+    {name: "Ditto",
+    hp: 48,
+    imgSrc: "./images/poke/132.png",
+    no: "#132",
+    type: "Normal",
+    height: "0.3",
+    weight: "4kg"},
+    {name: "Eevee",
+    hp: 55,
+    imgSrc: "./images/poke/133.png",
+    no: "#133",
+    type: "Normal",
+    height: "0.3m",
+    weight: "6.5kg"},
+    {name: "Vaporeon",
+    hp: 130,
+    imgSrc: "./images/poke/134.png",
+    no: "#134",
+    type: "Water",
+    height: "1m",
+    weight: "29kg"},
+    {name: "Jolteon",
+    hp: 65,
+    imgSrc: "./images/poke/135.png",
+    no: "#135",
+    type: "Electric",
+    height: "0.8m",
+    weight: "24.5kg"},
+    {name: "Flareon",
+    hp: 65,
+    imgSrc: "./images/poke/136.png",
+    no: "#136",
+    type: "Fire",
+    height: "0.9m",
+    weight: "25kg"},
+    {name: "Porygon",
+    hp: 65,
+    imgSrc: "./images/poke/137.png",
+    no: "#137",
+    type: "Normal",
+    height: "0.8m",
+    weight: "36.5kg"},
+    {name: "Omanyte",
+    hp: 35,
+    imgSrc: "./images/poke/138.png",
+    no: "#138",
+    type: "Rock, Water",
+    height: "0.4m",
+    weight: "7.5kg"},
+    {name: "Omastar",
+    hp: 70,
+    imgSrc: "./images/poke/139.png",
+    no: "#139",
+    type: "Rock, Water",
+    height: "1m",
+    weight: "35kg"},
+    {name: "Kabuto",
+    hp: 30,
+    imgSrc: "./images/poke/140.png",
+    no: "#140",
+    type: "Rock, Water",
+    height: "0.5m",
+    weight: "11.5kg"},
+    {name: "Kabutops",
+    hp: 60,
+    imgSrc: "./images/poke/141.png",
+    no: "#141",
+    type: "Rock, Water",
+    height: "1.3m",
+    weight: "40.5kg"},
+    {name: "Aerodactyl",
+    hp: 80,
+    imgSrc: "./images/poke/142.png",
+    no: "#142",
+    type: "Rock, Flying",
+    height: "1.8m",
+    weight: "59kg"},
+    {name: "Snorlax",
+    hp: 160,
+    imgSrc: "./images/poke/143.png",
+    no: "#143",
+    type: "Normal",
+    height: "2.1m",
+    weight: "460kg"},
+    {name: "Articuno",
+    hp: 90,
+    imgSrc: "./images/poke/144.png",
+    no: "#144",
+    type: "Ice, Flying",
+    height: "1.7m",
+    weight: "55.4kg"},
+    {name: "Zapdos",
+    hp: 90,
+    imgSrc: "./images/poke/145.png",
+    no: "#145",
+    type: "Electric, Flying",
+    height: "1.6m",
+    weight: "52.6kg"},
+    {name: "Moltres",
+    hp: 90,
+    imgSrc: "./images/poke/146.png",
+    no: "#146",
+    type: "Fire, Flying",
+    height: "2m",
+    weight: "60kg"},
+    {name: "Dratini",
+    hp: 41,
+    imgSrc: "./images/poke/147.png",
+    no: "#147",
+    type: "Dragon",
+    height: "1.8m",
+    weight: "3.3kg"},
+    {name: "Dragonair",
+    hp: 61,
+    imgSrc: "./images/poke/148.png",
+    no: "#148",
+    type: "Dragon",
+    height: "4m",
+    weight: "16.5kg"},
+    {name: "Dragonite",
+    hp: 91,
+    imgSrc: "./images/poke/149.png",
+    no: "#149",
+    type: "Dragon, Flying",
+    height: "2.2m",
+    weight: "210kg"},
+    {name: "Mewtwo",
+    hp: 106,
+    imgSrc: "./images/poke/150.png",
+    no: "#150",
+    type: "Psychic",
+    height: "2m",
+    weight: "122kg"}
 ]    
