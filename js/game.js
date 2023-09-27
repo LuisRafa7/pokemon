@@ -1,11 +1,12 @@
 class Game {
-    constructor() {
+    constructor(name, image) {
         this.startScreen = document.querySelector("#game-intro");
         this.gameScreen = document.querySelector("#game-screen");
         this.mainScreen = document.querySelector("#mapa");
         this.gameEndScreen = document.querySelector("#game-end");
         this.livesUpdate = document.querySelector("#lives");
         this.scoreUpdate = document.querySelector("#score");
+        this.catchUpdate = document.querySelector("#catch");
         this.highScore = document.querySelector("#highScore");
         this.yourScore = document.querySelector("#yourScore");
         this.minUni = document.querySelector("#minUni");
@@ -20,7 +21,8 @@ class Game {
             50,
             3,
             5,
-            "./images/pokeball.png");;
+            name,
+            image,);
         this.height = 80;
         this.width = 60;
         this.counter = 0;
@@ -28,18 +30,20 @@ class Game {
         this.teamRocket = new Rocket(this.mainScreen);
         this.score = 0;
         this.lives = 3;
+        this.catch = 0;
         this.gameIsOver = false;
         this.interval = undefined;
-        this.chrono = 180;
+        this.chrono = 120;
         this.minutes = 0;
         this.seconds = 0;
-
     }
-
-    start() {
+    
+    
+    start(arenapick) {
         this.mainScreen.style.height = `${this.height}vh`;
         this.mainScreen.style.width = `${this.width}%`;
-
+        this.mainScreen.style.backgroundImage = arenapick;
+        
         this.startScreen.style.display = 'none';
         this.gameScreen.style.display = 'flex';
 
@@ -89,7 +93,9 @@ class Game {
             this.pokemon.splice(0, 1)
             this.pokemon.push(new Pokemon(this.mainScreen, arr[this.counter + 1].hp, arr[this.counter + 1].imgSrc));
             this.counter++;
+            this.catch++;
             this.scoreUpdate.innerText = this.score;
+            this.catchUpdate.innerText = this.catch;
             console.log(images);
             if(this.counter === (arr.length - 1)) {
                 clearInterval(this.interval);
@@ -131,7 +137,7 @@ scheduleNewRocketCreation(interval) {
         setInterval (() => {
             this.teamRocket.element.remove();
             this.teamRocket = new Rocket(this.mainScreen);
-        }, 2000);
+        }, 4000);
     }
 }
 
@@ -195,7 +201,7 @@ endGame() {
             img.src = images[i].imgSrc;
             this.printArray.appendChild(img);
             img.addEventListener('click', function(){
-                //document.body.appendChild(para);
+                document.body.appendChild(para);
                 para.innerHTML = `<img class="popupimg" src=${images[i].imgSrc} alt="">
                 <p class="cima"><span class="titles" id="oitenta">Name</span><span class="titles1" id="oitenta">${images[i].name}</span></p>
                 <div class="lado">
@@ -207,15 +213,15 @@ endGame() {
                 <span class="cima" id="ladofirst"><span class="titles">Height</span><span class="titles1">${images[i].height}</span></span>
                 <span class="cima" id="ladosecond"><span class="titles">Weight</span><span class="titles1">${images[i].weight}</span></span>
                 </div>`
-                let newcloseButton= document.createElement('button');
-                let newContent = document.createTextNode('Close');
+                let newcloseButton = document.createElement('button');
+                let newContent = document.createTextNode('X');
                 newcloseButton.appendChild(newContent);
-                newcloseButton.id='btn';
+                newcloseButton.id='btnclose';
                 para.appendChild(newcloseButton);
                 document.body.appendChild(para).appendChild(newcloseButton);
-                newcloseButton.onclick = function remove(btn){
+                newcloseButton.onclick = function(){
                 para.parentElement.removeChild(para);
-}
+                }
             });
         }
             
@@ -997,4 +1003,158 @@ const arr = [
     type: "Poison",
     height: "0.6m",
     weight: "1kg"},
+    {name: "Weezing",
+    hp: 65,
+    imgSrc: "./images/poke/110.png",
+    no: "#100",
+    type: "Poison",
+    height: "1.2m",
+    weight: "9.5kg"},
+    {name: "Rhyhorn",
+    hp: 80,
+    imgSrc: "./images/poke/111.png",
+    no: "#111",
+    type: "Ground, Rock",
+    height: "1m",
+    weight: "115kg"},
+    {name: "Rhydon",
+    hp: 105,
+    imgSrc: "./images/poke/112.png",
+    no: "#112",
+    type: "Ground, Rock",
+    height: "1.9m",
+    weight: "120kg"},
+    {name: "Chansey",
+    hp: 250,
+    imgSrc: "./images/poke/113.png",
+    no: "#113",
+    type: "Normal",
+    height: "1.1m",
+    weight: "34.6kg"},
+    {name: "Tangela",
+    hp: 65,
+    imgSrc: "./images/poke/114.png",
+    no: "#114",
+    type: "Grass",
+    height: "1m",
+    weight: "35kg"},
+    {name: "Kangaskhan",
+    hp: 105,
+    imgSrc: "./images/poke/115.png",
+    no: "#115",
+    type: "Normal",
+    height: "2.2m",
+    weight: "80kg"},
+    {name: "Horsea",
+    hp: 30,
+    imgSrc: "./images/poke/116.png",
+    no: "#116",
+    type: "Water",
+    height: "0.4m",
+    weight: "8kg"},
+    {name: "Seadra",
+    hp: 55,
+    imgSrc: "./images/poke/117.png",
+    no: "#117",
+    type: "Water",
+    height: "1.2m",
+    weight: "25kg"},
+    {name: "Goldeen",
+    hp: 45,
+    imgSrc: "./images/poke/118.png",
+    no: "#118",
+    type: "Water",
+    height: "0.6m",
+    weight: "15kg"},
+    {name: "Seaking",
+    hp: 80,
+    imgSrc: "./images/poke/119.png",
+    no: "#119",
+    type: "Water",
+    height: "1.3",
+    weight: "39kg"},
+    {name: "Staryu",
+    hp: 30,
+    imgSrc: "./images/poke/120.png",
+    no: "#120",
+    type: "Water",
+    height: "0.8m",
+    weight: "34.5kg"},
+    {name: "Starmie",
+    hp: 60,
+    imgSrc: "./images/poke/121.png",
+    no: "#121",
+    type: "Water, Psychic",
+    height: "1.1m",
+    weight: "80kg"},
+    {name: "Mr. Mime",
+    hp: 40,
+    imgSrc: "./images/poke/122.png",
+    no: "#122",
+    type: "Psychic",
+    height: "1.3m",
+    weight: "54.5kg"},
+    {name: "Scyther",
+    hp: 70,
+    imgSrc: "./images/poke/123.png",
+    no: "#123",
+    type: "Bug, Flying",
+    height: "1.5m",
+    weight: "56kg"},
+    {name: "Jynx",
+    hp: 65,
+    imgSrc: "./images/poke/124.png",
+    no: "#124",
+    type: "Ice, Psychic",
+    height: "1.4m",
+    weight: "40.6kg"},
+    {name: "Electabuzz",
+    hp: 65,
+    imgSrc: "./images/poke/125.png",
+    no: "#125",
+    type: "Electric",
+    height: "1.1m",
+    weight: "30kg"},
+    {name: "Magmar",
+    hp: 65,
+    imgSrc: "./images/poke/126.png",
+    no: "#126",
+    type: "Fire",
+    height: "1.3m",
+    weight: "44.5kg"},
+    {name: "Pinsir",
+    hp: 65,
+    imgSrc: "./images/poke/127.png",
+    no: "#127",
+    type: "Bug",
+    height: "1.5m",
+    weight: "55kg"},
+    {name: "Tauros",
+    hp: 75,
+    imgSrc: "./images/poke/128.png",
+    no: "#128",
+    type: "Normal",
+    height: "1.4m",
+    weight: "88.4kg"},
+    {name: "Magikarp",
+    hp: 20,
+    imgSrc: "./images/poke/129.png",
+    no: "#129",
+    type: "Water",
+    height: "0.9m",
+    weight: "10kg"},
+    {name: "Gyarados",
+    hp: 95,
+    imgSrc: "./images/poke/130.png",
+    no: "#130",
+    type: "Water, Flying",
+    height: "6.5m",
+    weight: "235kg"},
+    {name: "Lapras",
+    hp: 130,
+    imgSrc: "./images/poke/131.png",
+    no: "#131",
+    type: "Water, Ice",
+    height: "2.5m",
+    weight: "220kg"},
 ]    

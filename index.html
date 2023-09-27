@@ -9,12 +9,12 @@
 <body>
     <main>
         <div id="game-intro">
-            <img src="./images/logo.png" alt="Logo">
-            <h1>The Game</h1>
-            <button id="start-button">Start Game</button>
-            <div>
-                <h2>Rules</h2>
-                Usa as setas para apanhar os Pókemon, evita o Team Rocket
+            <img id="intro-logo" src="./images/logo.png" alt="Logo">
+            <h1 class="title">THE PROJECT GAME</h1>
+            <button class="buttonstart" id="cPokeball">Choose your PokéBall</button>
+            <button class="buttonstart" id="cArena">Choose your Arena</button>
+            <button class="buttonstart" id="start-button">Start Game</button>
+            <button class="buttonstart">Rules</button>
             </div>
         </div>
 
@@ -27,12 +27,13 @@
                 </div>
                 <div id="mapa"></div>
                 <div id="third">
-                    <img id="ash" src="./images/ash.webp" alt="Ash">
                     <div id="stats">
                         <h2>Stats</h2>
-                        <p>Score: <span id="score">0</span></p>
-                        <p>Lives: <span id="lives">3</span></p>
+                        <p>Score<br><span id="score">0</span></p>
+                        <p>Catch<br><span id="catch">0</span></p>
+                        <p>Lives<br><span id="lives">3</span></p>
                     </div>
+                    <img id="ash" src="./images/ash.webp" alt="Ash">
                 </div>
                 
             </div>
@@ -42,7 +43,7 @@
             <h1 id="ov">Game Over</h1>
             <h2>High Score: <span id="highScore"></span></h2>
             <h2>Your Score: <span id="yourScore"></span></h2>
-            <button id="restart-button">Play Again</button>
+            <button class="buttonstart" id="restart-button">Play Again</button>
             <div id="abc">
                 <h1>Pokédex</h1>
                 <div id="arrPrint"></div>
@@ -57,4 +58,7 @@
     <script type="text/javascript" src="./js/game.js"></script>
     <script type="text/javascript" src="./js/script.js"></script>
 </body>
+<footer>
+    <p id="footer">Created by Luis Almeida Henriques</p>
+  </footer>
 </html>

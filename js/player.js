@@ -1,5 +1,5 @@
 class Player {
-    constructor(gameScreen, left, top, width, height, imgSrc) {
+    constructor(gameScreen, left, top, width, height, name, imgSrc) {
         this.gameScreen = gameScreen;
         this.left = left;
         this.top = top;
@@ -7,6 +7,7 @@ class Player {
         this.height = height;
         this.directionX = 0;
         this.directionY = 0;
+        this.name = name;
         this.element = document.createElement("img");
         
         this.element.src = imgSrc;

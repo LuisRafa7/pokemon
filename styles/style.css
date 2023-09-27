@@ -23,6 +23,32 @@ body {
 
 }
 
+#intro-logo {
+  width: 65%;
+}
+
+.title{
+background-color: #ff6961;
+border: solid 5px #980800;
+color: #2e67b0;
+margin-bottom: 2%;
+width: 30%;
+font-family: 'Pokemon Solid', sans-serif;
+text-align: center;
+border-radius: 50%;
+}
+
+.buttonstart {
+  background-color: #ffb236;
+  width: 20%;
+  border: solid 1px #985E00;
+  padding: 0% 0 0% 0;
+  font-family: 'Pokemon Solid', sans-serif;
+  font-size: large;
+  color: #985E00;
+  margin-bottom: 1%;
+}
+
 #main-screen {
     display: flex;
     flex-direction: row;
@@ -54,7 +80,7 @@ body {
 #mapa {
     width: 60%;
     height: auto;
-    background-image: url(../images/arenanormal.webp);
+    /* background-image: url(../images/arenanormal.webp);*/
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -91,10 +117,30 @@ body {
 #ov {
     font-family: 'Pokemon Hollow', sans-serif;
     color:#f1c304;
-    font-size: 500%;
+    font-size: 800%;
     text-shadow: -10px 0 #2e67b0, 0 10px #2e67b0, 10px 0 #2e67b0, 0 -10px #2e67b0;
     padding: 0;
     margin: 0;
+}
+
+#chrono span {
+  font-family: 'Pokemon Solid', sans-serif;
+  color:#2e67b0
+}
+
+#stats h2 {
+  font-family: 'Pokemon Solid', sans-serif;
+  color:#2e67b0
+}
+
+#stats p {
+  font-family: 'Pokemon Solid', sans-serif;
+  color:#2e67b0
+}
+
+#stats p span {
+  font-family: 'Pokemon Solid', sans-serif;
+  color:#2e67b0
 }
 
 
@@ -103,9 +149,14 @@ body {
     display: flex;
     flex-direction: column;
     text-align: center;
-    background-color: #b6dfe9;
-    border: solid 20px white;
+    background-color: #759fd4;
+    border: solid 20px #2e67b0;
     border-radius: 5%;
+}
+
+#abc h1 {
+  font-family: 'Pokemon Solid', sans-serif;
+  color:#2e67b0;
 }
 
 #arrPrint{
@@ -121,20 +172,6 @@ body {
    width: 8%;
 }
 
-#popup {
-    display: none;
-    position: fixed;
-    padding: 10px;
-    width: 280px;
-    left: 50%;
-    margin-left: -150px;
-    height: 180px;
-    top: 50%;
-    margin-top: -100px;
-    background: #FFF;
-    border: 3px solid #F04A49;
-    z-index: 20;
-  }
 
   .popup {
     display: block;
@@ -146,9 +183,108 @@ body {
     height: 450px;
     top: 40%;
     margin-top: -100px;
-    background: #FFF;
-    border: 3px solid #F04A49;
+    background: #51D55A;
+    border: 5px solid #007708;
     z-index: 20;
+  }
+
+  .popuppoke {
+    position: fixed;
+    padding: 1%;
+    width: 30%;
+    left: 35%;
+    height: 35%;
+    top: 32%;
+    background: #51D55A;
+    border: 5px solid #007708;
+    z-index: 20;
+  }
+
+  .titlepoke{
+    color:#0E4FA2;
+    text-align: center;
+    font-family: 'Pokemon Solid', sans-serif;
+    padding: 0;
+    margin: 0;
+  }
+
+  .slofast {
+    color:#0E4FA2;
+    font-family: 'Pokemon Solid', sans-serif;
+  }
+
+  .buttonpopup {
+    background-color: #ffb236;
+    border: solid 1px #985E00;
+    padding: 0% 0 0% 0;
+    font-family: 'Pokemon Solid', sans-serif;
+    font-size: medium;
+    color: #985E00;
+    margin-top: 30px;
+    margin-bottom: 1%;
+    padding: 0 3% 0 3%;
+  }
+
+  .arenas h3 {
+    font-size: small;
+    color:#0E4FA2;
+    font-family: 'Pokemon Solid', sans-serif;
+    padding: 0 1% 0 1%;
+  }
+
+  .pokes {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: space-around;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .popuparena {
+    position: fixed;
+    padding: 1%;
+    width: 50%;
+    left: 25%;
+    height: 50%;
+    top: 25%;
+    background: #51D55A;
+    border: 5px solid #007708;
+  }
+
+  .arenas {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: stretch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .pokes img{
+    width: 15%;
+  }
+
+  .arenas h3 {
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: center;
+  }
+
+  #normal {
+    border: 5px solid #f1c304;
+  }
+
+  #greatb {
+    border: 5px solid #f1c304;
+  }
+
+  #separate {
+    display: flex;
+    justify-content: space-between;
   }
 
   .popupimg {
@@ -156,22 +292,22 @@ body {
     width: 30%;
     margin-left: auto;
     margin-right: auto;
+    background-color: #007708;
+    border-radius: 10%;
   }
 
   .titles {
-    background-color:  green;
-    border: 2px solid black;
+    background-color: #007708;
+    border: 2px solid #51D55A;
     color: white;
-    border-radius: 40%;
     padding: 2px 10px 2px 10px;
     text-align: center;
   }
 
   .titles1 {
-    background-color: greenyellow;
-    border: 2px solid black;
-    color: white;
-    border-radius: 40%;
+    background-color: white;
+    border: 2px solid #51D55A;
+    color: #007708;
     padding: 8px 10px 8px 10px;
     text-align: center;
   }
@@ -198,7 +334,26 @@ body {
     flex-basis: 50%;
   }
 
-  #test {
-    display: none;
-    width: 500px;
+  #btnclose {
+    font-size: x-large;
+    width: 20%;
+    margin-left: 40%;
+    margin-top: 10px;
+    background-color: #ffb236;
+    border: solid 2px #985E00;
+    color: #985E00;
+    margin-bottom: 1%;
   }
+
+  #footer {
+    display: flex;
+    background-color: #0E4FA2;
+    color: #f1c304;
+    margin: 0 auto 0 auto;
+    padding: 0;
+    width: 20%;
+    align-content: center;
+    justify-content: center;
+  }
+
+
