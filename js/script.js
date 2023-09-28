@@ -42,10 +42,11 @@ window.onload = function () {
           rulespop.innerHTML = `<h1 class="titlepoke">Rules</h1>
           <div class="rulesformat">
           <p>Catch as many Pokémon as you can, each of which has a score corresponding to its HP.</p>
-          <p>Evita o Team Rocket para não perderes nenhuma vida.</p>
+          <p>Avoid Team Rocket to avoid losing any lives.</p>
           <p>Try to get as many scores as possible, you have 2 minutes</p>
+          <p>Use the arrows for play.</p>
           </div>
-          <div id="separate">
+          <div id="separate2">
           <button class="buttonpopup" id="buttone">OK</button>
           </div>`;
 
